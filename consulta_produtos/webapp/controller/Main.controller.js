@@ -9,7 +9,13 @@ sap.ui.define([
 
         return Controller.extend("consultaprodutos.controller.Main", {
             onInit: function () {
-                
+                //alert("Meu programa esta no ar");
+            },
+            onPressBuscar: function(){
+                let inpu;
+                inpu = this.byId("inpBusca");
+                let valor = inpu.getValue();
+                alert(valor);
             }
         });
     });
