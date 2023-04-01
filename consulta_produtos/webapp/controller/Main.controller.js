@@ -1,11 +1,13 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "sap//m/library"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller) {
+    function (Controller, library) {
         "use strict";
+        var urlObject = library.URLHelper;
 
         return Controller.extend("consultaprodutos.controller.Main", {
             onInit: function () {
@@ -16,6 +18,9 @@ sap.ui.define([
                 inpu = this.byId("inpBusca");
                 let valor = inpu.getValue();
                 alert(valor);
+            },
+            onClickImage: function(oEvent){
+                urlObject.redirect(oEvent.getSource().getSrc(), true);
             }
         });
     });
